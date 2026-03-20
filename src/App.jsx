@@ -6,7 +6,8 @@ import ServiciosPage from './pages/ServiciosPage';
 import AltaPage from './pages/AltaPage';
 import AxelPage from './pages/AxelPage';
 import JosePage from './pages/JosePage';
-import './index.css';
+import '../css/variables.css';
+import '../css/styles.css';
 
 function MainLayout() {
   return (
