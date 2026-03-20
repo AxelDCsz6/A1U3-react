@@ -850,3 +850,271 @@ footer p { font-size: 0.76rem; color: rgba(246,231,188,0.32); letter-spacing: 0.
   .stat { padding: 10px 24px; }
   .stat-sep { display: none; }
 }
+
+/* ══════════════════════════════════════════════
+   ALTA — formulario agregar servicio
+══════════════════════════════════════════════ */
+
+.alta-wrap {
+  background: var(--cream);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 80px 5% 96px;
+  min-height: calc(100vh - 64px);
+}
+
+.alta-container {
+  width: 100%;
+  max-width: 680px;
+}
+
+/* ── Volver ── */
+.alta-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(11,45,114,0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+  margin-bottom: 32px;
+}
+.alta-volver:hover { color: var(--navy); }
+
+/* ── Títulos ── */
+.alta-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  position: relative;
+  display: inline-block;
+}
+.alta-titulo::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  background: var(--cyan);
+  margin-top: 14px;
+}
+
+.alta-subtitulo {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  color: rgba(11,45,114,0.52);
+  line-height: 1.85;
+  margin: 20px 0 40px;
+}
+
+/* ── Mensaje de éxito ── */
+.msg-exito {
+  display: none;
+  background: rgba(10,196,224,0.12);
+  border: 1.5px solid rgba(10,196,224,0.45);
+  color: var(--navy);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 14px 20px;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+.msg-exito.visible { display: block; }
+
+/* ── Formulario ── */
+.alta-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-sep {
+  width: 100%;
+  height: 1px;
+  background: rgba(11,45,114,0.1);
+}
+
+/* ── Grupos de campos ── */
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo-grupo label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+.campo-fila {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ── Inputs y textareas ── */
+.alta-form input[type="text"],
+.alta-form input[type="number"],
+.alta-form textarea {
+  width: 100%;
+  background: var(--white);
+  border: 1.5px solid rgba(11,45,114,0.18);
+  color: var(--navy);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  -moz-appearance: textfield;
+}
+.alta-form input[type="number"]::-webkit-inner-spin-button,
+.alta-form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.alta-form input:focus,
+.alta-form textarea:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(10,196,224,0.12);
+}
+.alta-form textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* ── Contador de caracteres ── */
+.char-count {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  color: rgba(11,45,114,0.38);
+  text-align: right;
+  letter-spacing: 0.04em;
+}
+
+/* ── Select ── */
+.select-wrap { position: relative; }
+.select-wrap::after {
+  content: "\f078";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.65rem;
+  color: rgba(11,45,114,0.4);
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.select-wrap select {
+  width: 100%;
+  background: var(--white);
+  border: 1.5px solid rgba(11,45,114,0.18);
+  color: var(--navy);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem;
+  padding: 12px 40px 12px 14px;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.select-wrap select:focus {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(10,196,224,0.12);
+}
+
+/* ── Checkboxes ── */
+.check-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  background: var(--white);
+  border: 1.5px solid rgba(11,45,114,0.18);
+}
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.87rem;
+  color: var(--navy);
+  font-weight: 500;
+}
+.check-item input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--cyan);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── Hints y errores ── */
+.campo-hint {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.7rem;
+  color: rgba(11,45,114,0.38);
+  letter-spacing: 0.02em;
+}
+.campo-error {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #c0392b;
+  letter-spacing: 0.02em;
+  min-height: 1em;
+}
+
+/* ── Preview del tema ── */
+.tema-preview {
+  width: 100%;
+  height: 52px;
+  margin-top: 4px;
+  transition: background 0.4s ease;
+  border: 1.5px solid rgba(11,45,114,0.1);
+}
+
+/* ── Botón submit ── */
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--navy);
+  color: var(--cream);
+  border: none;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  cursor: pointer;
+  transition: background 0.22s, transform 0.18s;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+.btn-submit:hover { background: var(--ink); transform: translateY(-2px); }
+.btn-submit:active { transform: translateY(0); }
+
+/* ── Responsive alta ── */
+@media (max-width: 640px) {
+  .alta-wrap { padding: 60px 5% 80px; }
+  .campo-fila { grid-template-columns: 1fr; }
+  .btn-submit { width: 100%; justify-content: center; }
+}
